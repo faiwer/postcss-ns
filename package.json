@@ -12,6 +12,10 @@
     "css"
   ],
   "author": "faiwer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/faiwer/postcss-ns.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "mocha": "^4.0.1"
