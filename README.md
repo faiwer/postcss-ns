@@ -2,7 +2,7 @@
 
 ## Install
 
-1. `npm i --save ` todo
+1. `npm i --save postcss-ns`
 2. add into your `postcss.config.js`:
 
 ```js
