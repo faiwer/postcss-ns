@@ -1,6 +1,10 @@
 function walk(list, cb)
 {
-	for(const node of list)
+	if(!list)
+		return;
+
+	list.forEach(function(node)
+	{
 		switch(node.type)
 		{
 			case 'rule':
@@ -13,6 +17,7 @@ function walk(list, cb)
 
 			default: break;
 		}
+	});
 }
 
 function handle(node)
@@ -20,13 +25,13 @@ function handle(node)
 	if(!/\bns:/.test(node.selector))
 		return;
 
-	const match = node.selector.match(/ns:([\.\w\d_:-]+)/);
-	const ns = match && match[1];
+	var match = node.selector.match(/ns:([\.\w\d_:-]+)/);
+	var ns = match && match[1];
 	if(!ns)
 		throw new Error('empty css-namespace');
 
 	node.selector = node.selector
-		.replace(/\bns:([\.\w\d_:-]+)\s*/, '')
+		.replace(/\bns:([\.\w\d_:-]+)\s*/g, '')
 		.replace(/(\.|#)ns([-_\s]|$)/g, `$1${ns}$2`);
 }
 
@@ -37,3 +42,5 @@ module.exports = function(options)
 		walk(css.nodes, handle);
 	};
 };
+
+module.exports.handle = handle;

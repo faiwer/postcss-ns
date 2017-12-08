@@ -4,7 +4,7 @@
   "description": "Simple namespaces for postcss",
   "main": "postcss-ns.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha test.js"
   },
   "keywords": [
     "postcss",
@@ -12,5 +12,8 @@
     "css"
   ],
   "author": "faiwer",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
 }
