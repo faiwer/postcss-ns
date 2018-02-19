@@ -32,7 +32,7 @@ function handle(node)
 
 	node.selector = node.selector
 		.replace(/\bns:([\.\w\d_:-]+)\s*/g, '')
-		.replace(/(\.|#)ns([-_\s]|$)/g, `$1${ns}$2`);
+		.replace(/(\.|#)ns(\b|$)/g, `$1${ns}$2`);
 }
 
 module.exports = function(options)

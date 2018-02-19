@@ -33,4 +33,8 @@ describe('postcss-ns', function()
 		'several selectors',
 		'ns:a .ns-b div, ns:a .ns-c span',
 		'.a-b div, .a-c span');
+	test(
+		'bare+join',
+		'ns:a .ns.b, .ns.c',
+		'.a.b, .a.c');
 });
