@@ -1,6 +1,6 @@
 {
   "name": "postcss-ns",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple namespaces for postcss",
   "main": "postcss-ns.js",
   "scripts": {
